@@ -12,7 +12,7 @@ import com.mysql.jdbc.Statement;
 public class ConnectDB {
 
 	static String userLog = System.getProperty("user.name"); // Get user login
-	static String version = "0.1.190501"; // Version of software, check main file too.
+	static String version = "1.0.190520"; // Version of software, check main file too.
 
 	private static Connection con = null;
 	private static Statement stmt = null;

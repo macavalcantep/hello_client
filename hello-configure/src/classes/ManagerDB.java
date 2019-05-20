@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,11 +26,13 @@ public class ManagerDB {
 	private static String urlJDBC = "jdbc:sqlite:/home/"+user+"/hello/hello.db";
 	private static String logsPath = "/home/"+user+"/hello/configure.log";
 	private static String nextLine = "\r\n";
+	
 
 	// Get system date.
 	static SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	static Date nowDate = new Date(System.currentTimeMillis());
 	static String date = sd.format(nowDate);
+	
 
 	public static String msg = " - Selected OS path: " + urlJDBC + nextLine;
 	WriteFile wr = new WriteFile(logsPath, msg);

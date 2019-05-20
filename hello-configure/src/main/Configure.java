@@ -236,6 +236,6 @@ public class Configure extends JFrame {
 		lblVersion.setFont(new Font("SansSerif", Font.PLAIN, 11));
 		lblVersion.setBounds(23, 294, 180, 15);
 		contentPane.add(lblVersion);
-		lblVersion.setText("Linux - Versão: 1.0.190516");
+		lblVersion.setText("Linux - Versão: 1.0.190520");
 	}
 }

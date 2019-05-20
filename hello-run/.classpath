@@ -8,6 +8,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="/home/marco/eclipse-workspace/jars/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="lib" path="/home/marco/eclipse-workspace/jars/sqlite-jdbc-3.21.0.jar"/>
-	<classpathentry kind="lib" path="/home/marco/eclipse-workspace/jars/hyperic-sigar-1.6.4/sigar-bin/lib/sigar.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
