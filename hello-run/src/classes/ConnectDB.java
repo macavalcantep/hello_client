@@ -12,7 +12,7 @@ import com.mysql.jdbc.Statement;
 public class ConnectDB {
 
 	static String userLog = System.getProperty("user.name"); // Get user login
-	static String version = "1.0.190520"; // Version of software, check main file too.
+	static String version = "0.1.190501"; // Version of software, check main file too.
 
 	private static Connection con = null;
 	private static Statement stmt = null;
@@ -22,9 +22,8 @@ public class ConnectDB {
 	private static String user = "";
 	private static String pass = ""; // DataBase password.
 	private static String driver = "com.mysql.jdbc.Driver";
-	private static String userPath = System.getProperty("user.name"); // Get user login
-	private static String urlJDBC = "jdbc:sqlite:/home/" + userPath + "/hello/hello.db";
-	private static String logsPath = "/home/"+ userPath + "/hello/run.log";
+	private static String urlJDBC = "jdbc:sqlite:C:\\hello\\hello.db";
+	private static String logsPath = "C:\\hello\\run.log";
 	private static String os = System.getProperty("os.name"); // Get osName
 	private static String nextLine = "\r\n";
 

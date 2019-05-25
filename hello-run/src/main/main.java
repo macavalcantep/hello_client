@@ -9,6 +9,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.io.File;
 
+import org.hyperic.sigar.Cpu;
+import org.hyperic.sigar.CpuInfo;
+import org.hyperic.sigar.Mem;
+import org.hyperic.sigar.NetInterfaceStat;
+import org.hyperic.sigar.Sigar;
+import org.hyperic.sigar.SigarException;
+
 import com.mysql.jdbc.Statement;
 
 import classes.ConnectDB;
@@ -16,19 +23,52 @@ import classes.WriteFile;
 
 public class main {
 
+	private static String logsPath = "C:\\hello\\run.log";
 	private static String user = System.getProperty("user.name"); // Get user login
-	private static String logsPath = "/home/" + user + "/hello/run.log";
-	private static String version = "1.0.190520"; // Software version, check connectDB file too.
+	private static String version = "0.1.190501"; // Software version, check connectDB file too.
 	private static String os = System.getProperty("os.name"); // Get Operational system
 	private static String nextLine = "\r\n";
-	private static String cpuModel = null;
+	private static String cpuModel= null;
 	private static String showRam = null;
+	
 
-	String msg = " - OS Selected: Linux" + nextLine;
-	WriteFile wr = new WriteFile(logsPath, msg);
+			String msg = " - OS Selected: Windows" + nextLine;
+			WriteFile wr = new WriteFile(logsPath, msg);
+			
+			
+//			// GET CPU INFO
+//			public static void getCpuInfo() throws SigarException {
+//				
+//			Sigar sigar = new Sigar();
+//			
+//			CpuInfo[] infos = sigar.getCpuInfoList();
+//			CpuInfo info = infos[0];
+//	
+//			cpuModel = info.getVendor() +" "+ info.getModel();
+//			
+//			}
+			
+			
+			
+//			//GET RAM MEMORY
+//			public static void getRamMemory() throws SigarException {
+//				Sigar sigar = new Sigar();
+//				
+//				Mem mem = sigar.getMem();
+//				long totalRam  = mem.getRam();
+//				showRam = Long.toString(totalRam) + " MB";		
+//			}
+//			
+			
 
-	public static void main(String[] args) throws SQLException, IOException {
+			
+	public static void main(String[] args) throws SQLException, IOException, SigarException {
 
+	
+//		getCpuInfo();
+//		getRamMemory();
+		
+		
 		// Get system date.
 		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy");
 		Date nowDate = new Date(System.currentTimeMillis());
@@ -94,8 +134,9 @@ public class main {
 
 			String query;
 			query = "INSERT INTO macs VALUES (null, '" + host + "','" + ip + "','" + os + "','" + user + "','" + date
-					+ "','" + day + "','" + version + "','" + cpuModel + "','" + showRam + "','" + null + "','" + null
-					+ "','" + null + "','" + null + "');";
+					+ "','" + day + "','" + version + "','" + cpuModel + "','" + showRam + "','" + null + "','" + null + "','" +
+					null + "','" + null +"');";
+					
 
 			db.getStmt().execute(query);
 
@@ -104,9 +145,9 @@ public class main {
 		String msg = " - User loged: " + user + nextLine;
 		WriteFile wr = new WriteFile(logsPath, msg);
 		db.CloseConnection();
-
+		
 		boolean status = true;
-
+		
 	}
 
 }
